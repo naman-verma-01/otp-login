@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Swagger Implementation
+  description: This is a swagger documentations of a basic sign-up and login express api.
+  version: 0.2
+servers:
+  - url: http://localhost:8000  
+    description: Main (production) server
+  
+
+tags:
+  -name: OtpSender
+   description: Used for Sending otp to the given mobile number
+  
+paths:
+  /otp:
+    post:
+      tags:
+      - "OtpSender"
+      summary: Used to send Otp to the provided mobile number.
+      description: --.
+      consumes:
+      - "application/json"
+      
+      produces:
+      - "application/xml"
+      
+      parameters:
+        - in: body
+          name: user
+          description: The user to create.
+          schema:
+            type: object
+            required:
+              - userinfo
+            properties:
+              MobileNumber:
+                type: integer
+              
+      responses:
+        '200':    # status code
+          description: Success operation
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  type: string
