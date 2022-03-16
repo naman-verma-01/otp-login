@@ -10,6 +10,7 @@ const apiDocs = require("./routes/apiDocs")
 const otplogin = require("./routes/otpLogin")
 const User = require("./models/User")
 const signup = require("./routes/userSignup")
+const auth = require("./routes/userAuth")
 
 
 
@@ -19,6 +20,7 @@ app.use("/", apiDocs)
 app.use("/otp", otp)
 app.use("/otplogin",otplogin)
 app.use("/signup", signup)
+app.use("/auth",auth)
 const port = 8000;
 
 app.listen(process.env.PORT || port, () => console.log("server started on port " + port));
