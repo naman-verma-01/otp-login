@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require("express");
 const Otp = require("./models/otp");
-const sequelize = require("./services/otp_model_connection");
+const sequelize = require("./services/Connection");
 const bodyParser = require('body-parser');
 const app = express();
 const jwt = require("jsonwebtoken");
