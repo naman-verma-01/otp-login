@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const sequelize = require("../services/otp_model_connection");
+const sequelize = require("../services/Connection");
 
 const User = sequelize.define('userm', {
     // Model attributes are defined here
